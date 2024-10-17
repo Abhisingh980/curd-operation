@@ -40,6 +40,12 @@ INSTALLED_APPS = [
     'livereload',
 ]
 
+EXTRA_APPS = [
+    'operation',
+]
+
+INSTALLED_APPS += EXTRA_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
