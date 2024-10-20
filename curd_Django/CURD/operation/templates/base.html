@@ -1,0 +1,69 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{{ title|default:"Home" }}{% endblock %}</title>
+
+        <!-- add external link bootstrap -->
+        <link
+            rel="stylesheet"
+            href="https://bootswatch.com/5/lux/bootstrap.min.css"
+        />
+
+        <!-- add internal link -->
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+        <!-- add external link font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+    </head>
+
+    <body>
+        <!-- navigation -->
+
+        {% include 'nav.html' %}
+
+        <!-- end navigation -->
+
+        <!-- main content -->
+        <div class="container">
+            <br />
+
+            <!--notification  -->
+
+            <!-- add content  -->
+            {% block content %} {% endblock %}
+        </div>
+
+        <!-- end main content -->
+
+        <!-- footer -->
+
+        {% include 'footer.html' %}
+
+        <!-- end footer -->
+
+        <!-- add script -->
+        <script src="{% static 'js/base.js' %}"></script>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
