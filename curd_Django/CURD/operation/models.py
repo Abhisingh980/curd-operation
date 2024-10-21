@@ -10,6 +10,7 @@ class record(models.Model):
         (male,'male'),
         (female,'female'),
     ]
+    id = models.AutoField(primary_key=True)
     create_date = models.DateTimeField(auto_now_add=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

@@ -1,0 +1,100 @@
+/* Advanced Container Styling */
+.custom-container {
+    background-color: #2e2727; /* Light background for contrast */
+    padding: 40px; /* Add some padding */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 700px; /* Center the form and limit the width */
+    margin: 0 auto; /* Center the container horizontally */
+    transition: transform 0.3s ease;
+}
+
+/* Add hover effect to the form */
+.custom-container:hover {
+    transform: scale(1.02); /* Slightly enlarge the form on hover */
+}
+
+/* Typography Enhancements */
+h2 {
+    font-family: "Poppins", sans-serif; /* Professional font */
+    font-weight: 600;
+    color: #eb7a7a; /* Darker color for titles */
+}
+
+/* Form Input Fields */
+.styled-form .form-control {
+    background-color: #ffffff; /* White input background */
+    border: 2px solid #ced4da; /* Thicker border for better visibility */
+    padding: 10px; /* Increase input padding */
+    font-size: 16px; /* Larger text for better readability */
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input Focus Style */
+.styled-form .form-control:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: none; /* Remove default Bootstrap shadow */
+}
+
+/* Submit Button Custom Styling */
+.btn-custom {
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0; /* Center button and add margin */
+}
+
+/* Hover effect for the button */
+.btn-custom:hover {
+    background-color: #0056b3; /* Darken the button color */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Button Focus (Keyboard Accessibility) */
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.6); /* Subtle focus shadow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .custom-container {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .btn-custom {
+        font-size: 16px;
+    }
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: medium;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    color: #f0ebeb;
+}
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ced4da;
+    font-size: 16px;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}

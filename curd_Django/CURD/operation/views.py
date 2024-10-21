@@ -1,14 +1,17 @@
 from django.shortcuts import render,redirect
 
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm, UpdateRecordForm
 
 from django.contrib.auth import authenticate
+
+from django.contrib import messages
 
 from django.contrib.auth.models import auth
 
 from django.contrib.auth.decorators import login_required
 
 from .models import record
+
 
 # Create your views here.
 def home(request):
@@ -90,11 +93,29 @@ def create_record(request):
 
 @login_required(login_url='login')
 def update_record(request, pk):
-    pass
+    record_ = record.objects.get(id=pk)
+
+    form = UpdateRecordForm(instance=record_)
+
+    if request.method == 'POST':
+        form = UpdateRecordForm(request.POST, instance=record_)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+
+    context = {'form': form,
+                'record': record_,
+                'title': 'Update Record'}
+    return render(request, 'update-record.html', context)
+
+
 
 @login_required(login_url='login')
 def delete_record(request, pk):
-    pass
+    record_ = record.objects.get(id=pk)
+    record_.delete()
+    return redirect('dashboard')
+
 
 def user_logout(request):
     auth.logout(request)

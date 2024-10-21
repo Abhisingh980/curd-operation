@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<hr />
+<h2 class="text-center mt-2">Update Record</h2>
+<hr />
+<div class="custom-container">
+    <div class="row">
+        <div class="col-md-12">
+            <form
+                action="{% url 'update' record.id %}"
+                method="POST"
+                autocomplete="false"
+                class="styled-form"
+            >
+                {% csrf_token %} {{ form|crispy }}
+                <button type="submit" class="btn btn-custom">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
