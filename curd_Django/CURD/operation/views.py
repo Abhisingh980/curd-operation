@@ -116,6 +116,16 @@ def delete_record(request, pk):
     record_.delete()
     return redirect('dashboard')
 
+def view_record(request):
+
+    record_ = record.objects.all()
+
+    context = {'records': record_,
+                'title': 'View Record'}
+
+
+    return render(request, 'view-record.html',context)
+
 
 def user_logout(request):
     auth.logout(request)
