@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'livereload',
     'rest_framework',
+    'crispy_forms',
 ]
 
 EXTRA_APPS = [
@@ -46,6 +47,9 @@ EXTRA_APPS = [
 ]
 
 INSTALLED_APPS += EXTRA_APPS
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,10 +87,19 @@ WSGI_APPLICATION = 'CURD.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'django_crud',  # Name of your database
+            'USER': 'django',           # Your PostgreSQL username
+            'PASSWORD': 'singh9801333@',   # Your PostgreSQL password
+            'HOST': 'localhost',           # Set to 'localhost' or the IP of your database server
+            'PORT': '5432',                # Default PostgreSQL port
+        }
+
 }
 
 

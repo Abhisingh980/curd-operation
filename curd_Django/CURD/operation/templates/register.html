@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+
+<body>
+    <div class="container text-color-sub">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h3>Create User Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <form method="POST" autocomplete="off">
+                                {% csrf_token %} {{ form|crispy }}
+
+                                <div class="mt-4">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary btn-block"
+                                    >
+                                        Register
+                                    </button>
+                                </div>
+
+                                <div class="text-center mt-3">
+                                    <a
+                                        href="{% url 'login' %}"
+                                        class="btn btn-outline-primary"
+                                    >
+                                        Already have an account? Login
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background color */
+        }
+        .card {
+            border-radius: 1.5rem; /* Rounded corners */
+        }
+        .btn-primary {
+            transition:
+                background-color 0.3s,
+                border-color 0.3s; /* Smooth transition */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        .btn-outline-primary {
+            transition:
+                color 0.3s,
+                border-color 0.3s; /* Smooth transition */
+        }
+        .btn-outline-primary:hover {
+            color: #0056b3; /* Change text color on hover */
+            border-color: #0056b3; /* Change border color on hover */
+        }
+        .text-color-sub {
+            color: blue; /* Text color */
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+    </style>
+</body>
+
+{% endblock %}
