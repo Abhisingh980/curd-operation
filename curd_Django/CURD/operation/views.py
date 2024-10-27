@@ -115,7 +115,7 @@ def delete_record(request, pk):
     record_ = record.objects.get(id=pk)
     record_.delete()
     return redirect('dashboard')
-
+@login_required(login_url='login')
 def view_record(request):
 
     record_ = record.objects.all()
@@ -124,7 +124,7 @@ def view_record(request):
                 'title': 'View Record'}
 
 
-    return render(request, 'view-record.html',context)
+    return render(request, 'view.html',context)
 
 
 def user_logout(request):

@@ -6,3 +6,139 @@ th {
     text-align: center;
     color: red;
 }
+.nav-links .active a {
+    color: #ffdd99;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Container Styling */
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.homepage-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Title Styling */
+.welcome-title {
+    font-size: 2rem;
+    color: #333;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Clock Styling */
+.clock {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    align-self: flex-end;
+    animation: slideIn 1.5s ease;
+    padding-right: 1rem;
+}
+
+/* Animation for Title */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for Clock */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Welcome Message Container */
+.welcome-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition:
+        opacity 0.4s ease,
+        transform 0.3s ease;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 1;
+}
+
+/* Hidden State for Welcome Message */
+.welcome-message.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+/* Button Styling */
+.toggle-button {
+    background-color: #6a67ce;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(106, 103, 206, 0.2);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    outline: none;
+}
+
+.toggle-button:hover {
+    background-color: #574b90;
+    box-shadow: 0 6px 15px rgba(106, 103, 206, 0.3);
+}
+
+/* Animation */
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-message {
+    animation: slideDownFadeIn 0.8s ease;
+}

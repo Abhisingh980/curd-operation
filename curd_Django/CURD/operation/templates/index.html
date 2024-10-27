@@ -1,4 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Welcome to the Home Page</h1>
-<p>This is the home page of the website.</p>
-{% endblock %} ```
+
+<div class="homepage-container">
+    <h1 class="welcome-title">Welcome to Crud operation</h1>
+
+    <!-- Real-Time Clock -->
+    <p id="clock" class="clock text-end"></p>
+</div>
+
+<!-- Welcome Message -->
+<div id="welcome-message" class="welcome-message">
+    <h2>
+        Hello,
+        <h4 class="fs-2">{{user|upper}}</h4>
+        We're glad to see you here.
+    </h2>
+</div>
+<button onclick="toggleMessage()" class="toggle-button mb-3">
+    Toggle Welcome Message
+</button>
+
+{% endblock %}
